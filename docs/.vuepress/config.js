@@ -18,11 +18,13 @@ module.exports = {
   
     // 主题和它的配置
     theme: '@vuepress/theme-default',
-    chainWebpack: config => {
-        config.resolve.alias.set('core-js/library/fn', 'core-js/features')
-    },
     themeConfig: {
         logo: 'https://mossmirror.heycrab.xyz/static/img/bigmoshou.jpg',
+        nav: [
+          { text: "首页", link: "/" },
+          { text: "Mossfrp官网", link: "https://baidu.com" },
+          { text: "加入我们" , link: "https://jq.qq.com/?_wv=1027&k=8DWtQWn6"}
+        ],
         sidebar: {
             '/': [
             {
@@ -32,8 +34,11 @@ module.exports = {
             },
             {
                 text: '使用客户端',
-                collapsible: true,
-                children: ['/client/windows.md', '/client/linux.md'],
+                collapsible: false,
+                children: ['/client/windows.md', '/client/linux.md','/client/MossFrpStandard.md','MossFrp_Client.md'],
+            },
+            {
+                text: ''
             },
             {
                 text: 'FAQ',
