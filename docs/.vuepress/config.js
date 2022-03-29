@@ -1,44 +1,57 @@
 module.exports = {
-    // 站点配置
     lang: 'zh-CN',
-    title: 'MossFrp Wiki',
-    description: 'MossFrp 官方文档',
+    title: 'MossFrp Wiki 3.1',
+    base: '/', 
+    bundler: '@vuepress/bundler-webpack',
     plugins: [
-        [
-          '@vuepress/plugin-search',
-          {
-            locales: {
-              '/': {
-                placeholder: '搜索文档',
-              }
+      [
+        '@vuepress/plugin-search',
+        {
+            // 排除首页
+        isSearchable: (page) => page.path !== '/',
+          locales: {
+            '/': {
+              placeholder: '搜索',
+            },
+            '/en/': {
+              placeholder: 'Search',
             },
           },
-        ],
+        },
       ],
-  
-    // 主题和它的配置
-    theme: '@vuepress/theme-default',
+    ],
     themeConfig: {
-        logo: 'https://mossmirror.heycrab.xyz/static/img/bigmoshou.jpg',
-        nav: [
+        logo: '/bigmoshou.jpg',
+        navbar: [
           { text: "首页", link: "/" },
           { text: "Mossfrp官网", link: "https://baidu.com" },
-          { text: "加入我们" , link: "https://jq.qq.com/?_wv=1027&k=8DWtQWn6"}
+          { text: "加入官方QQ群" , link: "https://jq.qq.com/?_wv=1027&k=8DWtQWn6"},
+          { text: "GitHub", link: "https://github.com/MossFrp/MossFrpWiki-3.0"}
         ],
         sidebar: {
             '/': [
             {
                 text: '主页',
-                collapsible: true,
-                children: ['/readme.md', '/beforeask.md'],
-            },
-            {
-                text: '使用客户端',
                 collapsible: false,
-                children: ['/client/windows.md', '/client/linux.md','/client/MossFrpStandard.md','MossFrp_Client.md'],
+                children: ['/readme.md', '/tips.md','/beforeask.md'],
             },
             {
-                text: ''
+                text: '开始使用MossFrp',
+                collapsible: false,
+                children: ['/process/reg.md', '/process/help.md','/process/hellomossfrp.md'],
+            },
+            {
+                text: 'MossFrp Bot命令大全',
+                children: ['/bothelp/readme.md'],
+            },
+            {
+                text: '客户端',
+                children: ['/client/MossFrp_Client','/client/MossFrp_Client_Fastv','/client/MossFrpStandard','/client/MossFrpPlugin'],
+            },
+            {
+                text: '旧教程(能用！)',
+                collapsible: false,
+                children: ['/old/windows.md', '/old/linux.md','/old/MossFrpStandard.md','/old/MossFrp_Client.md'],
             },
             {
                 text: 'FAQ',

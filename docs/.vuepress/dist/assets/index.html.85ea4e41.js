@@ -1,1 +1,0 @@
-const e={key:"v-8daa1a0e",path:"/",title:"\u6B22\u8FCE\u6765\u5230 MossFrp Wiki\uFF01",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u58A8\u5B88\u7684\u6253\u6CB9\u8BD7",slug:"\u58A8\u5B88\u7684\u6253\u6CB9\u8BD7",children:[]}],git:{},filePathRelative:"readme.md"};export{e as data};
